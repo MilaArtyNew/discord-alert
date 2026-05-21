@@ -1,0 +1,18 @@
+[Unit]
+Description=Discord Monitor → Telegram forwarder
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/gpt/discord-monitor
+EnvironmentFile=/home/gpt/discord-monitor/.env
+ExecStart=/home/gpt/discord-monitor/venv/bin/python bot.py
+Restart=always
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
