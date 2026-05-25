@@ -34,7 +34,9 @@ def format_message(message: discord.Message) -> str:
     author = escape_html(message.author.display_name)
     content = message.content or ""
 
-    lines = [f"📢 <b>{server}</b> · #{channel}", f"👤 {author}\n"]
+    msg_link = f"https://discord.com/channels/{message.guild.id}/{message.channel.id}/{message.id}" if message.guild else ""
+    header = f'📢 <b>{server}</b> · <a href="{msg_link}">#{channel}</a>' if msg_link else f"📢 <b>{server}</b> · #{channel}"
+    lines = [header, f"👤 {author}\n"]
 
     if content:
         lines.append(escape_html(content))
