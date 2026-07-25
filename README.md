@@ -1,10 +1,12 @@
 # Discord Alert
 
-A Telegram bot project for automating operational workflows and user commands.
+Alert relay service for sending operational notifications to Discord. It focuses on configured alert delivery and webhook/channel integration rather than Telegram bot interaction.
 
 ## Features
 
-- Telegram bot command handling and operational notifications.
+- Sends alerts to Discord channels or webhooks.
+- Documents configuration for tokens/webhooks and runtime environment.
+- Supports deployment as a lightweight notification service.
 
 ## Architecture
 
